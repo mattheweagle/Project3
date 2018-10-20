@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public bool facingRight = true;
+    public bool faceRight = true;
     public bool jump = false;
     public float moveForce = 365f;
     public float maxSpeed = 5f;
     public float jumpForce = 1000f;
-    public Transform groundCheck;
+    public Transform groundCheck; // to allow character to stay up when in contact with "Ground" materials
 
 
     private bool grounded = false;
@@ -47,10 +47,10 @@ public class PlayerMovement : MonoBehaviour {
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y); // limits the velocity of the character to maxSpeed but keeps the direction
 
-        if (h > 0 && !facingRight)
-            Flip();
-        else if (h < 0 && facingRight)
-            Flip();
+        if (h > 0 && !faceRight)
+            DirectionSwitch();
+        else if (h < 0 && faceRight)
+            DirectionSwitch();
 
         if (jump) //if space bar pressed = jumps
         {
@@ -61,9 +61,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 
-    void Flip()
+    void DirectionSwitch()
     {
-        facingRight = !facingRight;
+        faceRight = !faceRight; //switches directions
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
