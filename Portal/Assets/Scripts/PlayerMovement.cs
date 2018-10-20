@@ -61,6 +61,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 
+
     void DirectionSwitch()
     {
         faceRight = !faceRight; //switches directions
