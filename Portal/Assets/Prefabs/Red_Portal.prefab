@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 114526752511446316}
   - component: {fileID: 50198430722436958}
   - component: {fileID: 58987656592712322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Red_Portal
-  m_TagString: Untagged
+  m_TagString: portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

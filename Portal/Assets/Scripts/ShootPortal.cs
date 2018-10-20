@@ -14,15 +14,13 @@ public class ShootPortal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            GameObject portal = (GameObject) Instantiate(bluePortal, transform.position, Quaternion.identity);
+            Instantiate(bluePortal, transform.position, Quaternion.identity);
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            GameObject portal = (GameObject)Instantiate(redPortal, transform.position, Quaternion.identity);
+            Instantiate(redPortal, transform.position, Quaternion.identity);
         }
     }
 }
