@@ -47,17 +47,10 @@ public class PlayerMovement : MonoBehaviour {
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y); // limits the velocity of the character to maxSpeed but keeps the direction
 
-<<<<<<< HEAD:Portal/Assets/PlayerMovement.cs
-        if (h > 0 && !facingRight)
-            SwitchDirection();
-        else if (h < 0 && facingRight)
-            SwitchDirection();
-=======
         if (h > 0 && !faceRight)
             DirectionSwitch();
         else if (h < 0 && faceRight)
             DirectionSwitch();
->>>>>>> 8d4a2b003f52b61db4ef83ce861add0845fb5ca4:Portal/Assets/Scripts/PlayerMovement.cs
 
         if (jump) //if space bar pressed = jumps
         {
@@ -68,11 +61,8 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 
-<<<<<<< HEAD:Portal/Assets/PlayerMovement.cs
-    void SwitchDirection()
-=======
+
     void DirectionSwitch()
->>>>>>> 8d4a2b003f52b61db4ef83ce861add0845fb5ca4:Portal/Assets/Scripts/PlayerMovement.cs
     {
         faceRight = !faceRight; //switches directions
         Vector3 theScale = transform.localScale;
