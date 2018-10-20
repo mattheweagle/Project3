@@ -53,8 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GunRotation.cs" />
-     <Compile Include="Assets\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\GunRotation.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\PortalMovement.cs" />
+     <Compile Include="Assets\Scripts\ShootPortal.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/eagle/OneDrive/Documents/GitHub/Project3/Portal/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

@@ -212,12 +212,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 109008694}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7988675, y: 0.23664553, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8193351, y: 0.1785542, z: -2.5}
+  m_LocalScale: {x: 1.2499999, y: 1.2499999, z: 1.2499999}
   m_Children: []
-  m_Father: {fileID: 1498699104}
-  m_RootOrder: 8
+  m_Father: {fileID: 1064276588}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &109008697
 MonoBehaviour:
@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 1064276588}
   - component: {fileID: 1064276589}
   - component: {fileID: 1064276590}
+  - component: {fileID: 1064276591}
   m_Layer: 9
   m_Name: Bazooka
   m_TagString: Untagged
@@ -492,7 +493,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.07113361, y: 0.16522384, z: 1}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
-  m_Children: []
+  m_Children:
+  - {fileID: 109008695}
   m_Father: {fileID: 1498699104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -554,7 +556,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15043422c30c904c8cb2539dad9e16d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+--- !u!114 &1064276591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064276587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64abf74c16b464c408a146cbcc7ebdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bluePortal: {fileID: 1515481387094982, guid: 7273ca43284aa97458536ff8b35b07aa, type: 2}
+  redPortal: {fileID: 1524856449781952, guid: 7ec441b24ad06bf46a84e805bcfcf238, type: 2}
+  velocity: {x: 0, y: 0}
 --- !u!1 &1110272818
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77010bcafa58837468b5ed39dd260d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  facingRight: 1
+  faceRight: 1
   jump: 0
   moveForce: 365
   maxSpeed: 5
@@ -1080,7 +1095,6 @@ Transform:
   - {fileID: 1647784326}
   - {fileID: 1679288947}
   - {fileID: 1110272819}
-  - {fileID: 109008695}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
