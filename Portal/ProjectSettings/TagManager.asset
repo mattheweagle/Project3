@@ -14,6 +14,11 @@ TagManager:
   - ExplosionFX
   - HealthBar
   - portal
+  - portal_red
+  - portal_blue
+  - portal_red_bullet
+  - portal_blue_bullet
+  - door
   layers:
   - Default
   - TransparentFX
@@ -28,7 +33,7 @@ TagManager:
   - Enemies
   - Pickups
   - Ground
-  - 
+  - Exit
   - 
   - 
   - 
