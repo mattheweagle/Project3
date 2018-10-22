@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance = null;
     public GameObject youWin;
 
-    // Use this for initialization
+    /** Start()
+     *  pre: game starts
+     *  post: Instance of the game is created
+     */
     void Start()
     {
         if (instance == null)
@@ -20,7 +23,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
+    /** Win()
+     *  function is called by WinGame()
+     *  pre: User reached door object
+     *  post: Success message is displayed
+     */
     public void Win()
     {
         youWin.SetActive (true);
