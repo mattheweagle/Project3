@@ -11,22 +11,26 @@ public class PlayerMovement : MonoBehaviour {
     public float jumpForce = 200f;
     public Transform groundCheck; // to allow character to stay up when in contact with "Ground" materials
     public bool isTeleported = false;
-
-
     private bool grounded = false;
     private Animator anim;
     private Rigidbody2D rb2d;
 
 
-    // Use this for initialization
+    /** Start() 
+     * pre: game starts
+     *  post: Animator object and Rigidbody object get initialized for the player
+     */
     void Start()
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // called every frame
-    // checks state of player every frame
+    /** Update()
+     *  pre: none
+     *  post: State of player gets changed depending on what was pressed
+     *  Checks state of player every frame
+     */
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
@@ -37,22 +41,26 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    //Method is in charge of limiting the players moving speed and changing jump state if button is pressed
+    /** FixedUpdate()
+     *  pre: Update() ran
+     *  post: Movement of player is limited to our constraints
+     *  Method is in charge of limiting the players moving speed and changing jump state if button is pressed
+     */
     void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal");
+        float dir = Input.GetAxis("Horizontal");
 
-        anim.SetFloat("Speed", Mathf.Abs(h));
+        anim.SetFloat("Speed", Mathf.Abs(dir));
 
-        if (h * rb2d.velocity.x < maxSpeed)
-            rb2d.AddForce(Vector2.right * h * moveForce); //increases speed to maxSpeed
+        if (dir * rb2d.velocity.x < maxSpeed)
+            rb2d.AddForce(Vector2.right * dir * moveForce); //increases speed to maxSpeed
 
         if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             rb2d.velocity = new Vector2(Mathf.Sign(rb2d.velocity.x) * maxSpeed, rb2d.velocity.y); // limits the velocity of the character to maxSpeed but keeps the direction
 
-        if (h > 0 && !faceRight)
+        if (dir > 0 && !faceRight)
             DirectionSwitch();
-        else if (h < 0 && faceRight)
+        else if (dir < 0 && faceRight)
             DirectionSwitch();
 
         if (jump) //if space bar pressed = jumps
@@ -63,8 +71,11 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-
-    //Changes direction of the player if the left key is pressed
+    /** DirectionSwitch()
+     *  function is called by FixedUpdate() when user is switching direction of player
+     *  pre: User is pressing the left key
+     *  post: Changes direction of the player if the left key is pressed
+     */
     void DirectionSwitch()
     {
         faceRight = !faceRight; //switches directions
