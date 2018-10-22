@@ -5,17 +5,12 @@ using UnityEngine;
 public class WinGame : MonoBehaviour {
 
     public GameObject youWin;
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    //After Player "collides" with door object it will display a Win message indicating level completion
+  
+    /** pre: Player reaches the door object
+     *  post: Success message is displayed indicating level completed
+     *  After Player "collides" with door object it will display a Win message indicating level completion
+     */
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         
