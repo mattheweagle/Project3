@@ -8,8 +8,9 @@ public class PlayerMovement : MonoBehaviour {
     public bool jump = false;
     public float moveForce = 365f;
     public float maxSpeed = 5f;
-    public float jumpForce = 1000f;
+    public float jumpForce = 200f;
     public Transform groundCheck; // to allow character to stay up when in contact with "Ground" materials
+    public bool isTeleported = false;
 
 
     private bool grounded = false;
@@ -25,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     // called every frame
+    // checks state of player every frame
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
+    //Method is in charge of limiting the players moving speed and changing jump state if button is pressed
     void FixedUpdate()
     {
         float h = Input.GetAxis("Horizontal");
@@ -61,12 +64,11 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 
-
+    //Changes direction of the player if the left key is pressed
     void DirectionSwitch()
     {
         faceRight = !faceRight; //switches directions
         Vector3 theScale = transform.localScale;
-        //theScale.x *= -1;
         transform.localScale = theScale;
     }
 }

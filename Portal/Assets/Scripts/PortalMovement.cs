@@ -7,7 +7,11 @@ public class PortalMovement : MonoBehaviour {
     Rigidbody2D rb;
     public float speed = 30f;
     Vector2 moveDirection;
+
 	// Use this for initialization
+    // pre: portal is shot
+    // post: portal bullet moves to the location of the mouse when it was clicked until it collides with a valid object
+    // Method is in charge of the portal bullet movement 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
