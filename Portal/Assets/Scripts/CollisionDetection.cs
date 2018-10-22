@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/** Handles collision of portal bullet with terrain.
+ */
 public class CollisionDetection : MonoBehaviour {
     public GameObject bluePortal;
     public GameObject redPortal;
     public GameObject Portal;
 
-    // pre: portal bullet is shot
-    // post: after collision with appropriate surface portal gets created and previous portal gets destroyed
-    // This method runs when the portal bullet hits a surface generating a collision
-
+    /** This method runs when the portal bullet hits a surface generating a collision.
+    * @pre portal bullet is shot
+    * @post after collision with appropriate surface portal gets created and previous portal gets destroyed
+    */
     void OnCollisionEnter2D(Collision2D collision)
     {
 

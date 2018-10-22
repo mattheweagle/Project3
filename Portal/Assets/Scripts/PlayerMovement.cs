@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/** Handles player movement. 
+ */
 public class PlayerMovement : MonoBehaviour {
-
     public bool faceRight = true;
     public bool jump = false;
     public float moveForce = 365f;
@@ -16,9 +16,9 @@ public class PlayerMovement : MonoBehaviour {
     private Rigidbody2D rb2d;
 
 
-    /** Start() 
-     * pre: game starts
-     *  post: Animator object and Rigidbody object get initialized for the player
+    /** Runs at start. 
+     * @pre game starts
+     * @post Animator object and Rigidbody object get initialized for the player
      */
     void Start()
     {
@@ -26,10 +26,9 @@ public class PlayerMovement : MonoBehaviour {
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    /** Update()
-     *  pre: none
-     *  post: State of player gets changed depending on what was pressed
-     *  Checks state of player every frame
+    /** Checks state of player every frame.
+     *  @pre none
+     *  @post State of player gets changed depending on what was pressed
      */
     void Update()
     {
@@ -41,10 +40,9 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    /** FixedUpdate()
-     *  pre: Update() ran
-     *  post: Movement of player is limited to our constraints
-     *  Method is in charge of limiting the players moving speed and changing jump state if button is pressed
+    /** Method is in charge of limiting the players moving speed and changing jump state if button is pressed.
+     *  @pre Update() ran
+     *  @post Movement of player is limited to our constraints
      */
     void FixedUpdate()
     {
@@ -71,10 +69,10 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    /** DirectionSwitch()
+    /** Changes character direction.
      *  function is called by FixedUpdate() when user is switching direction of player
-     *  pre: User is pressing the left key
-     *  post: Changes direction of the player if the left key is pressed
+     *  @pre User is pressing the left key
+     *  @post Changes direction of the player if the left key is pressed
      */
     void DirectionSwitch()
     {

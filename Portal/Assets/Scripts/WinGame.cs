@@ -1,17 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/** Handles completion of level.
+ */
 public class WinGame : MonoBehaviour {
-
     public GameObject youWin;
   
-    /** OnCollisionEnter2D(Collision2D collision)
-     *  pre: Player reaches the door object ("collides")
-     *  post: Success message is displayed indicating level completed
+    /** Sets win state to true.
+     * @pre Player reaches the door object
+     *  @post Success message is displayed indicating level completed
      *  After Player "collides" with door object it will display a Win message indicating level completion
      */
-    
     void OnCollisionEnter2D(Collision2D collision)
     {
         

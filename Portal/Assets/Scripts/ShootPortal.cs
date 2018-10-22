@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/** Handles portal shooting.
+ */
 public class ShootPortal : MonoBehaviour {
-
     public GameObject bluePortal;
     public GameObject redPortal;
     public Vector2 velocity;
@@ -11,12 +11,12 @@ public class ShootPortal : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-    //pre: mouse is clicked
-    //post: portal is shot
-    //shoots a portal when mouse is clicked following the direction towards the location of the mouse pointer when clicked
-	void Update () {
+
+    /** shoots a portal when mouse is clicked following the direction towards the location of the mouse pointer when clicked.
+    * @pre mouse is clicked
+    * @post portal is shot
+    */
+    void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             GameObject blue_portal_bullet = GameObject.FindWithTag("portal_blue_bullet");

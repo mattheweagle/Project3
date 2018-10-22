@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/** Handles teleporting players between portals. 
+ */
 public class TeleportPlayer : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 		
@@ -15,10 +15,10 @@ public class TeleportPlayer : MonoBehaviour {
 	}
     string portalEntered;
 
-    // pre: portals are created within an appropiate surface
-    // post: after player enters a portal it's position changes to that of the other portal
-    // This method runs after registering collision of player with portal and its goal is to switch the position of the player to that one of the other portal
-
+    /** This method runs after registering collision of player with portal and its goal is to switch the position of the player to that one of the other portal.
+     * pre: portals are created within an appropiate surface
+     * post: after player enters a portal it's position changes to that of the other portal
+     */
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject BluePortal = GameObject.FindWithTag("portal_blue");
@@ -40,8 +40,8 @@ public class TeleportPlayer : MonoBehaviour {
 
     }
 
-    // Resets the state of the player after its position is changed between the portals
-
+    /** Resets the state of the player after its position is changed between the portals.
+     */
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "portal_blue" && portalEntered == "red")
