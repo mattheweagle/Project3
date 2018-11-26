@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/** Handles teleporting players between portals. 
- */
+
 public class TeleportPlayer : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,34 +15,83 @@ public class TeleportPlayer : MonoBehaviour {
 	}
     string portalEntered;
 
-    /** This method runs after registering collision of player with portal and its goal is to switch the position of the player to that one of the other portal.
-     * pre: portals are created within an appropiate surface
-     * post: after player enters a portal it's position changes to that of the other portal
-     */
-    void OnCollisionEnter2D(Collision2D collision)
+    // pre: portals are created within an appropiate surface
+    // post: after player enters a portal it's position changes to that of the other portal
+    // This method runs after registering collision of player with portal and its goal is to switch the position of the player to that one of the other portal
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject BluePortal = GameObject.FindWithTag("portal_blue");
         GameObject RedPortal = GameObject.FindWithTag("portal_red");
         if (collision.gameObject.tag == "portal_blue" && !this.GetComponent<PlayerMovement>().isTeleported)
         {
-            portalEntered = "blue";
+            //store current speed on entering portal
+            this.GetComponent<PlayerMovement>().currentSpeed = this.GetComponent<Rigidbody2D>().velocity.magnitude;
+
+           
+
+            
+
             this.gameObject.transform.position = RedPortal.transform.position;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            this.GetComponent<PlayerMovement>().limitspeed = false;
+            portalEntered = "blue";
             this.GetComponent<PlayerMovement>().isTeleported = true;
-         
+
+            //launch player using current speed in certain direction according to where the exit portal is located
+            if(RedPortal.GetComponent<teleporterLocation>().location == "left_wall")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(this.GetComponent<PlayerMovement>().currentSpeed, 0);
+            }
+            else if(RedPortal.gameObject.GetComponent<teleporterLocation>().location == "ceiling")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -this.GetComponent<PlayerMovement>().currentSpeed);
+            }
+            else if (RedPortal.GetComponent<teleporterLocation>().location == "ground")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, this.GetComponent<PlayerMovement>().currentSpeed);
+            }
+            else
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(-this.GetComponent<PlayerMovement>().currentSpeed, 0);
+            }
+
         }
         if (collision.gameObject.tag == "portal_red" && !this.GetComponent<PlayerMovement>().isTeleported)
         {
-            portalEntered = "red";
+            this.GetComponent<PlayerMovement>().currentSpeed = this.GetComponent<Rigidbody2D>().velocity.magnitude;
+
             this.gameObject.transform.position = BluePortal.transform.position;
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+
+            this.GetComponent<PlayerMovement>().limitspeed = false;
+            portalEntered = "red";
             this.GetComponent<PlayerMovement>().isTeleported = true;
+            if (BluePortal.GetComponent<teleporterLocation>().location == "left_wall")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(this.GetComponent<PlayerMovement>().currentSpeed, 0);
+            }
+            else if (BluePortal.GetComponent<teleporterLocation>().location == "ceiling")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -this.GetComponent<PlayerMovement>().currentSpeed);
+            }
+            else if (BluePortal.GetComponent<teleporterLocation>().location == "ground")
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, this.GetComponent<PlayerMovement>().currentSpeed);
+            }
+            else
+            {
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(-this.GetComponent<PlayerMovement>().currentSpeed, 0);
+            }
 
         }
+        
 
     }
 
-    /** Resets the state of the player after its position is changed between the portals.
-     */
-    void OnCollisionExit2D(Collision2D collision)
+    // Resets the state of the player after its position is changed between the portals
+
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "portal_blue" && portalEntered == "red")
         {

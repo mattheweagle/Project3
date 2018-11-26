@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 /** Handles completion of level.
  */
 public class WinGame : MonoBehaviour {
@@ -16,9 +17,9 @@ public class WinGame : MonoBehaviour {
         
         if (collision.gameObject.tag == "door" )
         {
-            youWin.SetActive (true);
-            GameManager.instance.Win();
-
+            //youWin.SetActive (true);
+            //GameManager.instance.Win();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
     }

@@ -19,6 +19,15 @@ TagManager:
   - portal_red_bullet
   - portal_blue_bullet
   - door
+  - ceiling
+  - left_wall
+  - right_wall
+  - button
+  - bazooka
+  - testbullet
+  - breakable
+  - box
+  - chip
   layers:
   - Default
   - TransparentFX
@@ -34,7 +43,7 @@ TagManager:
   - Pickups
   - Ground
   - Exit
-  - 
+  - Glass
   - 
   - 
   - 
@@ -70,4 +79,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 149272721
+    locked: 0
+  - name: New Layer
+    uniqueID: 1819254951
     locked: 0

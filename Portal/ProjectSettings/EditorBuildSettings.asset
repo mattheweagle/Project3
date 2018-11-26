@@ -8,4 +8,52 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 5b6d59502b7b1154ebefdeed94a18427
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: e9d4fcba5d4904a4789004adda2a2feb
+  - enabled: 1
+    path: Assets/Scenes/Level6.unity
+    guid: 3de3e0d6b793a0f4b8b2a92e3a21c3cd
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 55d67a2b457d54740ab5f631783f14e1
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 052e6ced12d5a604baecbd1978185367
+  - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: c5b1267c678b8a64da82b2aff709cd36
+  - enabled: 1
+    path: Assets/Scenes/Level5.unity
+    guid: f8624b1ce28ae5f4e8e35016eb8bafbc
+  - enabled: 1
+    path: Assets/Scenes/Level7.unity
+    guid: a15b99413a9e3f241ad7d8260028dfb1
+  - enabled: 1
+    path: Assets/Scenes/Level8.unity
+    guid: 9c6af515a4a11bb4786e5984fe1f642b
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 2b4f5d856dfdf6445a4e5ad7340240ee
+  - enabled: 1
+    path: Assets/Scenes/TestResult.unity
+    guid: 606031ff81c176e49bcb47d2ab2a24bd
+  - enabled: 1
+    path: Assets/Tests/doorTestScene.unity
+    guid: 80029b989842a874c8e85de0333a19dd
+  - enabled: 1
+    path: Assets/Tests/theTestScene.unity
+    guid: 3350464c5512e6444aba36be229ce33d
+  - enabled: 1
+    path: Assets/Tests/theTestScene.unity
+    guid: 3350464c5512e6444aba36be229ce33d
+  - enabled: 1
+    path: Assets/Tests/boxTeleportTestScene.unity
+    guid: 01ab0c493c199b543ae363ebff68cbce
+  - enabled: 1
+    path: Assets/Tests/buttonTestScene.unity
+    guid: 5abb5ea9ec7fe3f4b8686320d3d58740
   m_configObjects: {}
