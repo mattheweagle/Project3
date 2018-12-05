@@ -1,0 +1,84 @@
+\hypertarget{class_teleport_player}{}\section{Teleport\+Player Class Reference}
+\label{class_teleport_player}\index{Teleport\+Player@{Teleport\+Player}}
+Inheritance diagram for Teleport\+Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_teleport_player}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_teleport_player_a555b0c226c512d6bc9ce347b19957cd9}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\item 
+void \mbox{\hyperlink{class_teleport_player_addd6af261867cf134ac87c580cebec92}{On\+Trigger\+Exit2D}} (Collider2D collision)
+\item 
+\mbox{\Hypertarget{class_teleport_player_ad75d1699964434878bf8a31244a6a4af}\label{class_teleport_player_ad75d1699964434878bf8a31244a6a4af}} 
+void {\bfseries Start} ()
+\item 
+\mbox{\Hypertarget{class_teleport_player_ab8dc957d5f4ca8e3bee2d4b48ac0ed23}\label{class_teleport_player_ab8dc957d5f4ca8e3bee2d4b48ac0ed23}} 
+void {\bfseries Update} ()
+\item 
+void \mbox{\hyperlink{class_teleport_player_a1ab94b6c3d13f1287f9127393afe2298}{On\+Collision\+Enter2D}} (Collision2D collision)
+\item 
+void \mbox{\hyperlink{class_teleport_player_ac85fc2322d2dc27de518434422c2c25e}{On\+Collision\+Exit2D}} (Collision2D collision)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_teleport_player_a3a1f027838b709b22b058dd5d8a4a140}\label{class_teleport_player_a3a1f027838b709b22b058dd5d8a4a140}} 
+string {\bfseries portal\+Entered}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Handles player teleporting
+
+Handles teleporting players between portals. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_teleport_player_a1ab94b6c3d13f1287f9127393afe2298}\label{class_teleport_player_a1ab94b6c3d13f1287f9127393afe2298}} 
+\index{Teleport\+Player@{Teleport\+Player}!On\+Collision\+Enter2D@{On\+Collision\+Enter2D}}
+\index{On\+Collision\+Enter2D@{On\+Collision\+Enter2D}!Teleport\+Player@{Teleport\+Player}}
+\subsubsection{\texorpdfstring{On\+Collision\+Enter2\+D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Teleport\+Player.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method runs after registering collision of player with portal and its goal is to switch the position of the player to that one of the other portal. pre\+: portals are created within an appropiate surface post\+: after player enters a portal it\textquotesingle{}s position changes to that of the other portal \mbox{\Hypertarget{class_teleport_player_ac85fc2322d2dc27de518434422c2c25e}\label{class_teleport_player_ac85fc2322d2dc27de518434422c2c25e}} 
+\index{Teleport\+Player@{Teleport\+Player}!On\+Collision\+Exit2D@{On\+Collision\+Exit2D}}
+\index{On\+Collision\+Exit2D@{On\+Collision\+Exit2D}!Teleport\+Player@{Teleport\+Player}}
+\subsubsection{\texorpdfstring{On\+Collision\+Exit2\+D()}{OnCollisionExit2D()}}
+{\footnotesize\ttfamily void Teleport\+Player.\+On\+Collision\+Exit2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the state of the player after its position is changed between the portals. \mbox{\Hypertarget{class_teleport_player_a555b0c226c512d6bc9ce347b19957cd9}\label{class_teleport_player_a555b0c226c512d6bc9ce347b19957cd9}} 
+\index{Teleport\+Player@{Teleport\+Player}!On\+Trigger\+Enter2D@{On\+Trigger\+Enter2D}}
+\index{On\+Trigger\+Enter2D@{On\+Trigger\+Enter2D}!Teleport\+Player@{Teleport\+Player}}
+\subsubsection{\texorpdfstring{On\+Trigger\+Enter2\+D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily void Teleport\+Player.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method runs after registering collision of player with portal and its goal is to switch the position of the player to that one of the other portal \begin{DoxyPrecond}{Precondition}
+portals are created within an appropiate surface 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+after player enters a portal it\textquotesingle{}s position changes to that of the other portal 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & collision object created by the physics engine \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_teleport_player_addd6af261867cf134ac87c580cebec92}\label{class_teleport_player_addd6af261867cf134ac87c580cebec92}} 
+\index{Teleport\+Player@{Teleport\+Player}!On\+Trigger\+Exit2D@{On\+Trigger\+Exit2D}}
+\index{On\+Trigger\+Exit2D@{On\+Trigger\+Exit2D}!Teleport\+Player@{Teleport\+Player}}
+\subsubsection{\texorpdfstring{On\+Trigger\+Exit2\+D()}{OnTriggerExit2D()}}
+{\footnotesize\ttfamily void Teleport\+Player.\+On\+Trigger\+Exit2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the state of the player after its position is changed between the portals 
+\begin{DoxyParams}{Parameters}
+{\em collision} & collision object created by the physics engine \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/Teleport\+Player.\+cs\end{DoxyCompactItemize}

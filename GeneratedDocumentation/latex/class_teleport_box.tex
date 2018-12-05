@@ -1,0 +1,63 @@
+\hypertarget{class_teleport_box}{}\section{Teleport\+Box Class Reference}
+\label{class_teleport_box}\index{Teleport\+Box@{Teleport\+Box}}
+Inheritance diagram for Teleport\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_teleport_box}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_teleport_box_a6e5afed61a3fae49c3e4cbf59845184f}\label{class_teleport_box_a6e5afed61a3fae49c3e4cbf59845184f}} 
+void {\bfseries Start} ()
+\item 
+\mbox{\Hypertarget{class_teleport_box_ad4adb243e5c3307d1c2a634614e841de}\label{class_teleport_box_ad4adb243e5c3307d1c2a634614e841de}} 
+void {\bfseries Update} ()
+\item 
+void \mbox{\hyperlink{class_teleport_box_ae75f32edd3ec30c3badd96e6d4c6cf31}{On\+Trigger\+Enter2D}} (Collider2D collision)
+\item 
+void \mbox{\hyperlink{class_teleport_box_ae10220f96d834813b63acce959fc009d}{On\+Trigger\+Exit2D}} (Collider2D collision)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_teleport_box_aded6e64d463b8cac6fcc2727831c66ed}\label{class_teleport_box_aded6e64d463b8cac6fcc2727831c66ed}} 
+string {\bfseries portal\+Entered}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_teleport_box_ae75f32edd3ec30c3badd96e6d4c6cf31}\label{class_teleport_box_ae75f32edd3ec30c3badd96e6d4c6cf31}} 
+\index{Teleport\+Box@{Teleport\+Box}!On\+Trigger\+Enter2D@{On\+Trigger\+Enter2D}}
+\index{On\+Trigger\+Enter2D@{On\+Trigger\+Enter2D}!Teleport\+Box@{Teleport\+Box}}
+\subsubsection{\texorpdfstring{On\+Trigger\+Enter2\+D()}{OnTriggerEnter2D()}}
+{\footnotesize\ttfamily void Teleport\+Box.\+On\+Trigger\+Enter2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method runs after registering collision of box with portal and its goal is to switch the position of the box to that one of the other portal \begin{DoxyPrecond}{Precondition}
+portals are created within an appropiate surface 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+after box enters a portal it\textquotesingle{}s position changes to that of the other portal 
+\end{DoxyPostcond}
+
+\begin{DoxyParams}{Parameters}
+{\em collision} & collision object created by the physics engine \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_teleport_box_ae10220f96d834813b63acce959fc009d}\label{class_teleport_box_ae10220f96d834813b63acce959fc009d}} 
+\index{Teleport\+Box@{Teleport\+Box}!On\+Trigger\+Exit2D@{On\+Trigger\+Exit2D}}
+\index{On\+Trigger\+Exit2D@{On\+Trigger\+Exit2D}!Teleport\+Box@{Teleport\+Box}}
+\subsubsection{\texorpdfstring{On\+Trigger\+Exit2\+D()}{OnTriggerExit2D()}}
+{\footnotesize\ttfamily void Teleport\+Box.\+On\+Trigger\+Exit2D (\begin{DoxyParamCaption}\item[{Collider2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Resets the state of the box after its position is changed between the portals 
+\begin{DoxyParams}{Parameters}
+{\em collision} & collision object created by the physics engine \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Assets/\+Scripts/Teleport\+Box.\+cs\end{DoxyCompactItemize}
