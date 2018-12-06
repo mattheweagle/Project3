@@ -2,3 +2,6 @@
 -Portals occasionally stop teleporting player after fired multiple times in a row.
 -Portal projectiles despawn midair after firing a new one.
 -Player movement is very slippery, especially noticeable on small platforms.
+-Knives move even when time is stopped, and move faster than intended.
+-Player doesn't go through a portal if a new exit portal is created too recently.
+-Player may exit portals with inconsistent speed.
