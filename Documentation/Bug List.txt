@@ -1,1 +1,4 @@
 -Player gets stuck on the side of platforms if it doesn't get high enough to clear it.
+-Portals occasionally stop teleporting player after fired multiple times in a row.
+-Portal projectiles despawn midair after firing a new one.
+-Player movement is very slippery, especially noticeable on small platforms.
