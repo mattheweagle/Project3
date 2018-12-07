@@ -1,8 +1,16 @@
 -Player gets stuck on the side of platforms if it doesn't get high enough to clear it.
 -Portals occasionally stop teleporting player after fired multiple times in a row.
--Portal projectiles despawn midair after firing a new one.
 -Player movement is very slippery, especially noticeable on small platforms.
 -Knives move even when time is stopped, and move faster than intended.
--Player doesn't go through a portal if a new exit portal is created too recently.
--Player may exit portals with inconsistent speed.
--Boxes have no way to teleport once they stop moving.
+-Level 1 surfaces lock the character when teleporting so you can't properly build up speed in an infinite loop.
+-Player and box will not teleport if an exit portal is placed after already being inside the entrance portal.
+-Level 2 right wall is red to indicate a hazard but it isn't a hazard. It should be gray.
+-If you position a portal right between a brown surface and a red surface, when you teleport to that portal you will always restart the level even though you're not supposed to be touching it.
+-Teleportation is a little bit weird and unpredictable if you move at top speed and fire a new portal right before teleporting.
+-The player can become teleport 'locked' and has to put both portals on top of eachother and jump out of them to fix it.
+-The doors can be shot by portal bullets and instead of deleting them, they just float around the world really slowly. We should've added the antiportal script to the doors.
+-If the player stands on a specific spot in Level 6, right above the second room you enter, you will be stuck and unable to move.
+-If you rapidly press w while teleporting, the game will let you jump really high. This is because you're momentarily touching the ground after appearing at the exit portal location.
+-Level 7 has an unintended solution. You can actually just put a portal on the right wall and if the box comes in at the right angle (seems random) it will have enough velocity to skip a bit of the level.
+-Level 7 also has another big bug. If you shoot a portal on the left wall at the highest possible spot, you can just barely reach it with the player, allowing you to teleport down to the bottom of the map where you aren't supposed to get to. This doesn't let you cheat the level however, since you have no way of getting back up.
+-Tortilla chips can rotate when they run into blocks at an angle.
