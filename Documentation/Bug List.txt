@@ -5,3 +5,4 @@
 -Knives move even when time is stopped, and move faster than intended.
 -Player doesn't go through a portal if a new exit portal is created too recently.
 -Player may exit portals with inconsistent speed.
+-Boxes have no way to teleport once they stop moving.
